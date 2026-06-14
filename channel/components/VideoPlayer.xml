@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="VideoPlayer" extends="Group">
+    <interface>
+        <field id="movieId" type="string" onChange="onMovieIdChanged" />
+        <field id="playbackDone" type="boolean" alwaysNotify="true" />
+        <field id="serverUrl" type="string" />
+        <field id="sessionToken" type="string" />
+    </interface>
+
+    <script type="text/brightscript" uri="VideoPlayer.brs" />
+
+    <children>
+        <Video
+            id="videoNode"
+            width="1920"
+            height="1080"
+            translation="[0, 0]"
+            enableTrickPlay="false" />
+
+        <Label
+            id="loadingLabel"
+            text="Loading stream..."
+            translation="[800, 500]"
+            font="font:MediumBoldSystemFont"
+            color="#FF4444"
+            visible="true" />
+
+        <Label
+            id="errorLabel"
+            text=""
+            translation="[600, 500]"
+            font="font:MediumSystemFont"
+            color="#FF4444"
+            visible="false" />
+
+        <!-- Seek Bar Overlay -->
+        <Group id="seekBarGroup" visible="false" translation="[0, 920]">
+            <!-- Dim background strip -->
+            <Rectangle
+                width="1920"
+                height="160"
+                color="#000000"
+                opacity="0.7" />
+
+            <!-- Time label (left) -->
+            <Label
+                id="currentTimeLabel"
+                text="0:00"
+                translation="[80, 20]"
+                font="font:MediumBoldSystemFont"
+                color="#FFFFFF" />
+
+            <!-- Duration label (right) -->
+            <Label
+                id="durationLabel"
+                text="0:00"
+                translation="[1720, 20]"
+                font="font:MediumBoldSystemFont"
+                color="#849495"
+                horizAlign="right"
+                width="120" />
+
+            <!-- Track background -->
+            <Rectangle
+                id="seekTrackBg"
+                translation="[80, 70]"
+                width="1760"
+                height="8"
+                color="#333538" />
+
+            <!-- Progress bar -->
+            <Rectangle
+                id="seekTrackProgress"
+                translation="[80, 70]"
+                width="0"
+                height="8"
+                color="#FFFFFF" />
+
+            <!-- Playback state label -->
+            <Label
+                id="stateLabel"
+                text="PAUSED"
+                translation="[80, 100]"
+                font="font:SmallSystemFont"
+                color="#00DCE5" />
+        </Group>
+    </children>
+</component>

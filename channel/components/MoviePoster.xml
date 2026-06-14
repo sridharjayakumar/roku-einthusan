@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MoviePoster" extends="Group">
+    <interface>
+        <field id="itemContent" type="node" onChange="onContentChanged" />
+    </interface>
+
+    <script type="text/brightscript" uri="MoviePoster.brs" />
+
+    <children>
+        <Rectangle
+            id="posterBg"
+            width="200"
+            height="340"
+            color="#1E2023"
+            translation="[10, 10]" />
+        <Poster
+            id="posterImage"
+            width="200"
+            height="300"
+            translation="[10, 10]"
+            loadDisplayMode="scaleToZoom" />
+        <Label
+            id="titleLabel"
+            translation="[10, 315]"
+            width="200"
+            font="font:SmallestSystemFont"
+            color="#E2E2E6"
+            horizAlign="center"
+            maxLines="2" />
+    </children>
+</component>
