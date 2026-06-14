@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="LanguageTile" extends="Group">
+    <interface>
+        <field id="itemContent" type="node" onChange="onContentChanged" />
+        <field id="itemHasFocus" type="boolean" onChange="onFocusChanged" />
+    </interface>
+
+    <script type="text/brightscript" uri="LanguageTile.brs" />
+
+    <children>
+        <Rectangle
+            id="tileBg"
+            width="400"
+            height="225"
+            color="#1E2023"
+            translation="[10, 10]" />
+
+        <Poster
+            id="tileImage"
+            width="400"
+            height="225"
+            translation="[10, 10]"
+            loadDisplayMode="scaleToZoom"
+            uri="" />
+
+        <Rectangle
+            id="tileOverlay"
+            width="400"
+            height="225"
+            color="#0C0E11"
+            opacity="0.3"
+            translation="[10, 10]" />
+
+        <Label
+            id="tileLabel"
+            width="420"
+            translation="[0, 248]"
+            horizAlign="center"
+            font="font:MediumBoldSystemFont"
+            color="#849495" />
+    </children>
+</component>

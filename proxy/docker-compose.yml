@@ -1,0 +1,13 @@
+services:
+  einthusan-proxy:
+    build: .
+    container_name: einthusan-proxy
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - EINTHUSAN_EMAIL=${EINTHUSAN_EMAIL}
+      - EINTHUSAN_PASSWORD=${EINTHUSAN_PASSWORD}
+      - ROKU_IP=${ROKU_IP}
+      - ROKU_DEV_PASSWORD=${ROKU_DEV_PASSWORD}

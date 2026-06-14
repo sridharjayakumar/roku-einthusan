@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="SearchScreen" extends="Group">
+    <interface>
+        <field id="movieSelected" type="string" alwaysNotify="true" />
+        <field id="serverUrl" type="string" />
+        <field id="sessionToken" type="string" />
+        <field id="selectedLang" type="string" onChange="onLangSet" />
+    </interface>
+
+    <script type="text/brightscript" uri="SearchScreen.brs" />
+
+    <children>
+        <Label
+            id="titleLabel"
+            text="Search Movies"
+            translation="[80, 40]"
+            font="font:LargeBoldSystemFont"
+            color="#E2E2E6" />
+
+        <Label
+            id="hintLabel"
+            text="Type a movie name, then press Play"
+            translation="[80, 100]"
+            font="font:SmallSystemFont"
+            color="#849495" />
+
+        <Keyboard
+            id="searchKeyboard"
+            translation="[80, 140]"
+            textEditBox="[width: 600]" />
+
+        <!-- Search and Clear buttons to the right of keyboard group 4 -->
+        <ActionButton
+            id="searchButton"
+            text="Search"
+            translation="[1600, 260]" />
+
+        <ActionButton
+            id="clearButton"
+            text="Clear"
+            translation="[1600, 340]" />
+
+        <Label
+            id="loadingLabel"
+            text="Searching..."
+            translation="[80, 650]"
+            font="font:SmallSystemFont"
+            color="#00DCE5"
+            visible="false" />
+
+        <Label
+            id="noResultsLabel"
+            text="No results found"
+            translation="[80, 650]"
+            font="font:MediumBoldSystemFont"
+            color="#FF4444"
+            visible="false" />
+
+        <!-- Continue Watching Section (below buttons) -->
+        <Group id="continueGroup" visible="false" translation="[80, 650]">
+            <Label
+                text="Continue Watching"
+                translation="[0, 0]"
+                font="font:SmallBoldSystemFont"
+                color="#00DCE5" />
+
+            <MarkupGrid
+                id="continueGrid"
+                translation="[0, 40]"
+                numColumns="5"
+                numRows="1"
+                itemSize="[220, 360]"
+                itemSpacing="[20, 20]"
+                itemComponentName="MoviePoster"
+                drawFocusFeedback="true"
+                focusBitmapBlendColor="#00F5FF" />
+        </Group>
+
+        <!-- Search Results Grid -->
+        <MarkupGrid
+            id="resultsGrid"
+            translation="[80, 650]"
+            numColumns="5"
+            numRows="2"
+            itemSize="[220, 360]"
+            itemSpacing="[20, 20]"
+            itemComponentName="MoviePoster"
+            drawFocusFeedback="true"
+            focusBitmapBlendColor="#00F5FF"
+            visible="false" />
+    </children>
+</component>

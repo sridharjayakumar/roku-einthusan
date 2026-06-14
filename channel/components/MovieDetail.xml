@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MovieDetail" extends="Group">
+    <interface>
+        <field id="movieId" type="string" onChange="onMovieIdChanged" />
+        <field id="playRequested" type="string" alwaysNotify="true" />
+        <field id="serverUrl" type="string" />
+        <field id="sessionToken" type="string" />
+    </interface>
+
+    <script type="text/brightscript" uri="MovieDetail.brs" />
+
+    <children>
+        <!-- Background -->
+        <Poster
+            uri="pkg:/images/background.jpg"
+            width="1920"
+            height="1080"
+            translation="[0, 0]"
+            loadDisplayMode="scaleToZoom" />
+
+        <!-- Left: Poster Card -->
+        <Rectangle
+            id="posterCard"
+            translation="[80, 120]"
+            width="460"
+            height="780"
+            color="#1A1C1F" />
+
+        <Poster
+            id="moviePoster"
+            translation="[100, 140]"
+            width="420"
+            height="740"
+            loadDisplayMode="scaleToZoom" />
+
+        <!-- Right: Detail Card -->
+        <Rectangle
+            id="detailCard"
+            translation="[580, 120]"
+            width="1260"
+            height="840"
+            color="#1A1C1F" />
+
+        <!-- Metadata (runtime, rating) -->
+        <Label
+            id="metaLabel"
+            text=""
+            translation="[640, 180]"
+            font="font:SmallSystemFont"
+            color="#849495"
+            width="1000" />
+
+        <!-- Title -->
+        <Label
+            id="titleLabel"
+            text=""
+            translation="[640, 230]"
+            font="font:LargeBoldSystemFont"
+            color="#FFFFFF"
+            width="1100" />
+
+        <!-- Synopsis -->
+        <Label
+            id="synopsisLabel"
+            text=""
+            translation="[640, 330]"
+            font="font:SmallSystemFont"
+            color="#B9CACA"
+            width="1100"
+            wrap="true"
+            maxLines="7" />
+
+        <!-- Cast -->
+        <Label
+            id="castLabel"
+            text=""
+            translation="[640, 580]"
+            font="font:SmallSystemFont"
+            color="#849495"
+            width="1100"
+            wrap="true"
+            maxLines="2" />
+
+        <!-- Play / Continue Watching Button (Cyan Primary) -->
+        <Group id="playButton" translation="[640, 680]">
+            <Rectangle
+                id="playButtonBg"
+                width="400"
+                height="64"
+                color="#00F5FF" />
+            <Poster
+                id="playIcon"
+                uri="pkg:/images/play_icon.png"
+                width="24"
+                height="24"
+                translation="[24, 20]" />
+            <Label
+                id="playButtonLabel"
+                text="Play Movie"
+                translation="[56, 18]"
+                width="320"
+                font="font:SmallBoldSystemFont"
+                color="#003739" />
+        </Group>
+
+        <!-- Mark as Watched Button (Dark Secondary) -->
+        <Group id="markWatchedButton" translation="[1060, 680]" visible="false">
+            <Rectangle
+                id="markWatchedBg"
+                width="340"
+                height="64"
+                color="#282A2D" />
+            <Label
+                id="markWatchedLabel"
+                text="Mark as Watched"
+                translation="[0, 18]"
+                width="340"
+                horizAlign="center"
+                font="font:SmallBoldSystemFont"
+                color="#B9CACA" />
+        </Group>
+
+        <!-- Loading -->
+        <Label
+            id="loadingLabel"
+            text="Loading details..."
+            translation="[640, 400]"
+            font="font:MediumSystemFont"
+            color="#00DCE5"
+            visible="true" />
+
+        <!-- Year (hidden, used for data) -->
+        <Label
+            id="yearLabel"
+            text=""
+            visible="false" />
+
+    </children>
+</component>

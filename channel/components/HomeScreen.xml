@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="HomeScreen" extends="Group">
+    <interface>
+        <field id="selectedLanguage" type="string" alwaysNotify="true" />
+    </interface>
+
+    <script type="text/brightscript" uri="HomeScreen.brs" />
+
+    <children>
+        <Poster
+            id="logoImage"
+            uri="pkg:/images/logo.png"
+            width="500"
+            height="140"
+            translation="[80, 20]"
+            loadDisplayMode="scaleToFit" />
+
+        <Label
+            text="Choose your language to start streaming"
+            translation="[80, 170]"
+            font="font:SmallSystemFont"
+            color="#849495" />
+
+        <MarkupGrid
+            id="languageGrid"
+            translation="[80, 230]"
+            numColumns="4"
+            numRows="2"
+            itemSize="[420, 310]"
+            itemSpacing="[32, 40]"
+            itemComponentName="LanguageTile"
+            drawFocusFeedback="true"
+            focusBitmapUri="pkg:/images/focus_border.png"
+            focusBitmapBlendColor="#FFFFFF"
+            focusFootprintBitmapUri="pkg:/images/focus_border.png"
+            focusFootprintBlendColor="#333538"
+            wrapDividerWidth="0"
+            vertFocusAnimationStyle="floatingFocus" />
+    </children>
+</component>

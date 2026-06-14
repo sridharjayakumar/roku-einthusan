@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MovieGrid" extends="Group">
+    <interface>
+        <field id="language" type="string" onChange="onLanguageChanged" />
+        <field id="movieSelected" type="string" alwaysNotify="true" />
+        <field id="serverUrl" type="string" />
+        <field id="sessionToken" type="string" />
+    </interface>
+
+    <script type="text/brightscript" uri="MovieGrid.brs" />
+
+    <children>
+        <Label
+            id="titleLabel"
+            text="Movies"
+            translation="[80, 40]"
+            font="font:LargeBoldSystemFont"
+            color="#E2E2E6" />
+
+        <Label
+            id="loadingLabel"
+            text="Loading movies..."
+            translation="[80, 110]"
+            font="font:MediumSystemFont"
+            color="#00DCE5"
+            visible="true" />
+
+        <MarkupGrid
+            id="posterGrid"
+            translation="[80, 110]"
+            numColumns="6"
+            numRows="3"
+            itemSize="[220, 360]"
+            itemSpacing="[20, 20]"
+            itemComponentName="MoviePoster"
+            drawFocusFeedback="true"
+            focusBitmapBlendColor="#00F5FF"
+            visible="false" />
+    </children>
+</component>

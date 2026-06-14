@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+    <interface>
+        <field id="currentScreen" type="string" value="login" />
+    </interface>
+
+    <script type="text/brightscript" uri="MainScene.brs" />
+
+    <children>
+        <Poster
+            uri="pkg:/images/background.jpg"
+            width="1920"
+            height="1080"
+            loadDisplayMode="scaleToZoom" />
+        <LoginScreen id="loginScreen" visible="true" />
+        <HomeScreen id="homeScreen" visible="false" />
+        <SearchScreen id="searchScreen" visible="false" />
+        <MovieGrid id="movieGrid" visible="false" />
+        <MovieDetail id="movieDetail" visible="false" />
+        <VideoPlayer id="videoPlayer" visible="false" />
+    </children>
+</component>

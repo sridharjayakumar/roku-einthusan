@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="LoginScreen" extends="Group">
+    <interface>
+        <field id="loginResult" type="assocarray" alwaysNotify="true" />
+        <field id="serverUrl" type="string" />
+    </interface>
+
+    <script type="text/brightscript" uri="LoginScreen.brs" />
+
+    <children>
+        <LayoutGroup
+            id="loginLayout"
+            translation="[640, 200]"
+            layoutDirection="vert"
+            horizAlignment="center"
+            itemSpacings="[30]">
+
+            <Label
+                id="titleLabel"
+                text="Einthusan"
+                font="font:LargeBoldSystemFont"
+                color="#FFFFFF" />
+
+            <Label
+                id="subtitleLabel"
+                text="Sign in to your account"
+                font="font:SmallSystemFont"
+                color="#CCCCCC" />
+
+            <LayoutGroup layoutDirection="vert" itemSpacings="[10]">
+                <Label text="Email" font="font:SmallSystemFont" color="#AAAAAA" />
+                <Keyboard
+                    id="emailKeyboard"
+                    textEditBox="[width: 500]" />
+            </LayoutGroup>
+
+            <LayoutGroup layoutDirection="vert" itemSpacings="[10]">
+                <Label text="Password" font="font:SmallSystemFont" color="#AAAAAA" />
+                <Keyboard
+                    id="passwordKeyboard"
+                    textEditBox="[width: 500, secureMode: true]" />
+            </LayoutGroup>
+
+            <Button
+                id="loginButton"
+                text="Sign In"
+                minWidth="200" />
+
+            <Label
+                id="errorLabel"
+                text=""
+                font="font:SmallSystemFont"
+                color="#FF4444"
+                visible="false" />
+
+            <Label
+                id="loadingLabel"
+                text="Signing in..."
+                font="font:SmallSystemFont"
+                color="#FF4444"
+                visible="false" />
+        </LayoutGroup>
+    </children>
+</component>

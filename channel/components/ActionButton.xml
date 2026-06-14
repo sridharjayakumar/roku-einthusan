@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ActionButton" extends="Group">
+    <interface>
+        <field id="text" type="string" onChange="onTextChanged" />
+        <field id="buttonSelected" type="integer" alwaysNotify="true" />
+    </interface>
+
+    <script type="text/brightscript" uri="ActionButton.brs" />
+
+    <children>
+        <Rectangle
+            id="buttonBg"
+            width="280"
+            height="56"
+            color="#282A2D" />
+        <Label
+            id="buttonLabel"
+            translation="[0, 14]"
+            width="280"
+            horizAlign="center"
+            font="font:SmallBoldSystemFont"
+            color="#B9CACA" />
+    </children>
+</component>
